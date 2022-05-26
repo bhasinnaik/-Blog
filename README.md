@@ -1,5 +1,5 @@
 # Blog
-During dicussions with friends over drink, we exchange intresting conversations and thoughts.Blog is best medium to keep this record of these priceless conversations and thoughts.
+During dicussions with friends over drink, we exchange intresting conversations and thoughts.Blog is best medium to keep record of these priceless conversations and thoughts.
 With Blog web app, we intend to make blogging simple and beautiful.
 # Blog 0.1
  - Registration and login user
