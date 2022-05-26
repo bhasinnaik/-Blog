@@ -9,7 +9,7 @@ With Blog web app, we intend to make blogging simple and beautiful.
  -  Edit Blogs
 # Tech Stack
   - ServerSide Script: Python Flask
-  - FrontEnd: HTML5 + CSS
-  - DB: Postgres/MongoDB
+  - FrontEnd: HTML5 + CSS(style)
+  - DB: PostgresMongoDB
   - Hosting: AWS
   
