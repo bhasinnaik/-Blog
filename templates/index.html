@@ -5,27 +5,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blogspace</title>
-  <style>
-    body{
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-    }
-    /* Style the header */
-    .header {
-      padding: 120px;
-      text-align: center;
-      background-size: cover;
-      color: white;
-    }
-    /* Increase the font size of the h1 element */
-    .header h1{
-      font-size: 40px;
-    }
-  </style>
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'main.css') }}">
 </head>
 <body>
   <div class = "header" style="background-image: url('{{ url_for('static', filename='header.jpg') }}')">
     <h1>Blogspace</h1>
     <h3>Exchange Thoughts and Ideas</h3>
   </div>
+  <br>
+ <main>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <h3>blog 1</h3>
+        <p>created by</p>
+        <p>blog summary</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <h3>blog 2</h3>
+        <p>created by</p>
+        <p>blog summary</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <h3>blog 3</h3>
+        <p>created by</p>
+        <p>blog summary</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <h3>blog 4</h3>
+        <p>created by</p>
+        <p>blog summary</p>
+      </div>
+    </div>
+  </div>
+  </main>
+</body>
 </html>
