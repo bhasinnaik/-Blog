@@ -1,49 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blogspace</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename = 'main.css') }}">
-</head>
-<body>
-  <div class = "header" style="background-image: url('{{ url_for('static', filename='header.jpg') }}')">
-    <h1>Blogspace</h1>
-    <h3>Exchange Thoughts and Ideas</h3>
-  </div>
-  <br>
- <main>
+{% extends 'base.html' %}
+
+{% block content %}
+  <div>
+  {% for post in posts %}
   <div class="row">
     <div class="column">
       <div class="card">
-        <h3>blog 1</h3>
-        <p>created by</p>
-        <p>blog summary</p>
+        <p> {{ post.title }} </p>
+        <p> {{ post.subtitle }} </p>
+        <p> created by {{ post.author }} </p>
+      </div>
       </div>
     </div>
-    <div class="column">
-      <div class="card">
-        <h3>blog 2</h3>
-        <p>created by</p>
-        <p>blog summary</p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card">
-        <h3>blog 3</h3>
-        <p>created by</p>
-        <p>blog summary</p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card">
-        <h3>blog 4</h3>
-        <p>created by</p>
-        <p>blog summary</p>
-      </div>
-    </div>
-  </div>
-  </main>
-</body>
-</html>
+    {% endfor %}
+</div>
+{% endblock %}
