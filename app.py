@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 db = SQLAlchemy(app)
 
-class BlogPost(db.Model):
+class Blog(db.Model):
   id = db.Column(db.Integer, primary_key = True)
   version = db.Column(db.String(3))
   title = db.Column(db.String(50))
@@ -17,4 +17,5 @@ class BlogPost(db.Model):
 
 @app.route('/')
 def index():
-  return render_template('index.html')
+  posts = Blog.query.all()
+  return render_template('index.html', posts=Blog.query.all( ))
