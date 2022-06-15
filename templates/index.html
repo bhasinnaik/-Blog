@@ -6,14 +6,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blogspace</title>
   <link rel="stylesheet" href="{{ url_for('static', filename = 'main.css') }}">
+   <script>                                                                 // looking for signup_modal file in server
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /* Loop through a collection of all HTML elements: */
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+              if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+              if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+              /* Remove the attribute, and call this function once more: */
+             // elmnt.removeAttribute("w3-include-html");
+              //includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+    </script> 
+
+
 </head>
 <body>
   <div class = "header" style="background-image: url('{{ url_for('static', filename='header.jpg') }}')">
     <h1>Blogspace</h1>
     <h3>Exchange Thoughts and Ideas</h3>
   </div>
-  <br>
+  <br> 
  <main>
+  
+    
+
+  <!-- <form action="action_page.php" style="border:1px solid #ccc">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+  
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+  
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+  
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+  
+      <div class="clearfix">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form> -->
+
+
+
+
+
+ <div w3-include-html="signup_modal.html" ></div> 
+ 
+
+
+
+
+
+
+
+
   <div class="row">
     <div class="column">
       <div class="card">
@@ -45,5 +121,9 @@
     </div>
   </div>
   </main>
+  <script>
+    includeHTML();
+    </script>
+    
 </body>
 </html>
