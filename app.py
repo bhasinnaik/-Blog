@@ -19,7 +19,14 @@ class Blog(db.Model):
   content = db.Column(db.Text)
 
 #Root Index path.
+# return all blogs with latest one first.
 @app.route('/')
 def index():
-  posts = Blog.query.all()
+  posts = Blog.query.order_by(Blog.date_posted.desc()).all()
   return render_template('index.html', posts=Blog.query.all( ))
+
+#route to return specific blog details once user clicks on specific blog on index.html.
+@app.route('/post/<int:post_id>')
+def post(post_id):
+  post = Blog.query.filter_by(id=post_id).one()
+  return render_template('post.html', post=post)
