@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
   <div>
   {% for post in posts %}
+  
   <div class="row">
-    <div class="column">
+    <div class="column"> 
       <div class="card">
-        <p> {{ post.title }} </p>
-        <p> {{ post.subtitle }} </p>
-        <p> created by {{ post.author }} </p>
-      </div>
+        <h2> {{ post.title }} </h2>
+        <h3> created by {{ post.author }} </h3>
+      </div>     
       </div>
     </div>
     {% endfor %}
