@@ -49,3 +49,14 @@ body{
   background-color: #f1f1f1;
 }
 
+
+.card h2{
+  font-size: 20px;
+  color:  #726f6f;
+}
+
+.card h3{
+  font-size: 15px;
+  color:  #726f6f;
+}
+
